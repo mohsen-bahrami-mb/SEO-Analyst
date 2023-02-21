@@ -4,9 +4,19 @@ import * as ContentCalc from "./calculation-models/contentCalculations";
 const WINDOWTarget: Window & typeof globalThis = window;
 let windowLoaded: string;
 
-WINDOWTarget.addEventListener("load", (e) => {
+WINDOWTarget.addEventListener("load", async (e) => {
+   // start calculate, when page be loaded
+   await setTimeLoaded(e);
    SEOCalculate();
 });
+
+async function setTimeLoaded(e: Event) {
+   // removing additional decimal & set time to variable
+   let timeSplit = (e.timeStamp / 1000).toString().split(".");
+   timeSplit[1] = timeSplit[1].replace(/(\b\d{1,3})(\d*)?/, "$1");
+   let result = timeSplit.join(".");
+   windowLoaded = result;
+}
 
 function SEOCalculate() {
    // define variables
@@ -23,6 +33,7 @@ function SEOCalculate() {
    SEOCountParagraphsNum!.innerText = WritingCalc.paragraphArray.length.toString() ?? "0";
    SEOCountWordsNum!.innerText = WritingCalc.wordArray.length.toString() ?? "0";
    // set content calculate to SEO tool
+   SEOPageLoadTimeNum!.innerText = windowLoaded.toString();
    SEOLinksNum!.innerText = ContentCalc.linkArray?.length.toString() ?? "0";
    SEOImagesTagNum!.innerText =
       (ContentCalc.imgTagArry.length + ContentCalc.pictureTagArry.length).toString() ?? "0";
