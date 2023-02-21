@@ -6,14 +6,14 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-   <title>SEO Extention</title>
+   <title>SEO Analyst</title>
 </head>
 
 <body>
    <!-- navbar - start -->
    <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid justify-content-start">
-         <span class="navbar-brand mb-0 h1">SEO EXT</span>
+         <span class="navbar-brand mb-0 h1">SEO Analyst</span>
          <a class="btn btn-outline-light btn-sm mx-3" href="#" target="_blank">Our Website</a>
          <a class="btn btn-outline-success btn-sm mx-3" href="#" target="_blank">Support Us</a>
          <button type="button" class="nav-item btn btn-outline-primary btn-sm ms-auto">en</button>
@@ -29,21 +29,25 @@
             <table class="table table-dark table-striped m-0">
                <tbody>
                   <tr>
-                     <td class="text-start">Count Paragraphs</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start"id="count-numbers-txt">Count Numbers</td>
+                     <td class="text-end" id="count-numbers-num">0</td>
                   </tr>
                   <tr>
-                     <td class="text-start">Count Sentences</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start"id="count-paragraphs-txt">Count Paragraphs</td>
+                     <td class="text-end" id="count-paragraphs-num">0</td>
                   </tr>
                   <tr>
-                     <td class="text-start">Count Words</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start" id="count-sentences-txt">Count Sentences</td>
+                     <td class="text-end" id="count-sentences-num">0</td>
                   </tr>
                   <tr>
+                     <td class="text-start" id="count-words-txt">Count Words</td>
+                     <td class="text-end" id="count-words-num">0</td>
+                  </tr>
+                  <tr class="">
                      <td class="text-start">The Most Words</td>
                      <td class="text-end">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        <button class="btn btn-primary disabled" type="button" data-bs-toggle="collapse"
                            data-bs-target="#the-most-words-btn" aria-expanded="false"
                            aria-controls="the-most-words-btn">
                            SHOW WORDS
@@ -84,28 +88,28 @@
             <table class="table table-dark table-striped m-0">
                <tbody>
                   <tr>
-                     <td class="text-start">Page Load Time <small class="text-secondary">(with your connection)</small>
+                     <td class="text-start" id="page-load-time-txt">Page Load Time <small class="text-secondary">(with your connection)</small>
                      </td>
                      <td class="text-end">
-                        <span>0</span>
+                        <span id="page-load-time-num">0</span>
                         <small class="text-secondary">s</small>
                      </td>
                   </tr>
                   <tr>
-                     <td class="text-start">Links</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start" id="links-txt">Links</td>
+                     <td class="text-end" id="links-num">0</td>
                   </tr>
                   <tr>
-                     <td class="text-start">Images Tag</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start" id="images-tag-txt">Images Tag</td>
+                     <td class="text-end" id="images-tag-num">0</td>
                   </tr>
                   <tr>
-                     <td class="text-start">Videos Tag</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start" id="videos-tag-txt">Videos Tag</td>
+                     <td class="text-end" id="videos-tag-num">0</td>
                   </tr>
                   <tr>
-                     <td class="text-start">Audios Tag</td>
-                     <td class="text-end">0</td>
+                     <td class="text-start" id="audios-tag-txt">Audios Tag</td>
+                     <td class="text-end" id="audios-tag-num">0</td>
                   </tr>
                </tbody>
             </table>
