@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/chrome": "^0.0.217",
     "bootstrap": "^5.2.3"
   },
   "devDependencies": {

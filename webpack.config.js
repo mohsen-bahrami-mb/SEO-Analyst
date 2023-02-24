@@ -1,7 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.ts',
+  /**
+   * select file's entery directory "src" one by one
+   * then direct to output directory "SEO-Analyst-build" one by one
+  */
+  entry: './src/service-worker.ts',
+  // entry: './src/scripts/content-script.ts',
+  // entry: './src/popup/popup.ts',
+  // entry: './src/options/options.ts',
   module: {
     rules: [
       {
@@ -15,7 +22,16 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, './dist'),
+    filename: 'service-worker.js',
+    path: path.resolve(__dirname, './SEO-Analyst-build'),
+
+    // filename: 'content-script.js',
+    // path: path.resolve(__dirname, './SEO-Analyst-build/scripts'),
+
+    // filename: 'popup.js',
+    // path: path.resolve(__dirname, './SEO-Analyst-build/popup'),
+
+    // filename: 'options.js',
+    // path: path.resolve(__dirname, './SEO-Analyst-build/options'),
   },
 };

@@ -1,6 +1,39 @@
 import * as WritingCalc from "./calculation-models/writingCalculations";
 import * as ContentCalc from "./calculation-models/contentCalculations";
 
+// Inform the background page that 
+// this tab should have a page-action.
+chrome.runtime.sendMessage({
+   from: 'content',
+   subject: 'showPageAction',
+});
+
+
+// Listen for messages from the popup.
+chrome.runtime.onMessage.addListener((msg, sender, response) => {
+   // First, validate the message's structure.
+   if ((msg.from === 'popup') && (msg.subject === 'DOMInfo')) {
+      // Collect the necessary data. 
+      // (For your specific requirements `document.querySelectorAll(...)`
+      //  should be equivalent to jquery's `$(...)`.)
+      let domInfo = {
+         // define variables
+         SEOCountNumbersNum: document.getElementById('count-numbers-num'),
+         SEOCountParagraphsNum: document.getElementById('count-paragraphs-num'),
+         SEOCountWordsNum: document.getElementById('count-words-num'),
+         SEOPageLoadTimeNum: document.getElementById('page-load-time-num'),
+         SEOLinksNum: document.getElementById('links-num'),
+         SEOImagesTagNum: document.getElementById('images-tag-num'),
+         SEOVideosTagNum: document.getElementById('videos-tag-num'),
+         SEOAudiosTagNum: document.getElementById('audios-tag-num')
+      };
+
+      // Directly respond to the sender (popup), 
+      // through the specified callback.
+      response(domInfo);
+   }
+});
+
 const WINDOWTarget: Window & typeof globalThis = window;
 let windowLoaded: string;
 
