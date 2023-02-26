@@ -1,8 +1,8 @@
 {
-  "name": "seo-extention",
+  "name": "SEO Analyst",
   "version": "1.0.0",
-  "description": "",
-  "main": "./src/index.ts",
+  "description": "A tool to check your competitors and improve your website's SEO",
+  "main": "E.src/scripts/content-script.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "webpack-dev-server --mode development",
