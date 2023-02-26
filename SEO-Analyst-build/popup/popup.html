@@ -5,18 +5,19 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+   <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
+   <link rel="stylesheet" href="./popup.css">
    <title>SEO Analyst</title>
 </head>
 
-<body style="width: 600px; height: 800px;">
+<body style="width: 500px; height: 500px;">
    <!-- navbar - start -->
-   <nav class="navbar navbar-dark bg-dark">
+   <nav class="navbar navbar-dark bg-dark position-sticky top-0 start-0">
       <div class="container-fluid justify-content-start">
          <span class="navbar-brand mb-0 h1">SEO Analyst</span>
-         <a class="btn btn-outline-light btn-sm mx-3" href="#" target="_blank">Our Website</a>
-         <a class="btn btn-outline-success btn-sm mx-3" href="#" target="_blank">Support Us</a>
-         <button type="button" class="nav-item btn btn-outline-primary btn-sm ms-auto">en</button>
+         <a class="btn btn-outline-light btn-sm mx-1" href="#" target="_blank">Our Website</a>
+         <a class="btn btn-outline-success btn-sm mx-1" href="#" target="_blank">Support Us</a>
+         <button type="button" class="nav-item btn btn-outline-primary btn-sm ms-auto">fa</button>
       </div>
    </nav>
    <!-- navbar - end -->
@@ -25,24 +26,58 @@
    <div class="container-fluid bg-secondary">
       <div class="row justify-content-around">
          <!-- table 1 - srart -->
-         <div class="col-5 m-1 my-4 p-0 rounded border border-3 border-warning" style="height: fit-content;">
+         <div class="col-11 m-1 my-4 p-0 rounded border border-3 border-warning" style="height: fit-content;">
             <table class="table table-dark table-striped m-0">
                <tbody>
                   <tr>
-                     <td class="text-start"id="count-numbers-txt">Count Numbers</td>
-                     <td class="text-end" id="count-numbers-num">0</td>
+                     <td class="text-start" id="page-load-time-txt">Page Load Time <small class="text-secondary">(with
+                           your connection)</small>
+                     </td>
+                     <td class="text-end">
+                        <span id="page-load-time-num">-</span>
+                        <small class="text-secondary">s</small>
+                     </td>
                   </tr>
                   <tr>
-                     <td class="text-start"id="count-paragraphs-txt">Count Paragraphs</td>
-                     <td class="text-end" id="count-paragraphs-num">0</td>
+                     <td class="text-start" id="links-txt">Links</td>
+                     <td class="text-end" id="links-num">-</td>
                   </tr>
                   <tr>
-                     <td class="text-start text-secondary" id="count-sentences-txt">Count Sentences <small>(soon)</small></td>
-                     <td class="text-end" id="count-sentences-num">0</td>
+                     <td class="text-start" id="images-tag-txt">Images Tag</td>
+                     <td class="text-end" id="images-tag-num">-</td>
+                  </tr>
+                  <tr>
+                     <td class="text-start" id="videos-tag-txt">Videos Tag</td>
+                     <td class="text-end" id="videos-tag-num">-</td>
+                  </tr>
+                  <tr>
+                     <td class="text-start" id="audios-tag-txt">Audios Tag</td>
+                     <td class="text-end" id="audios-tag-num">-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <!-- table 1 - end -->
+         <!-- table 2 - srart -->
+         <div class="col-11 m-1 my-4 p-0 rounded border border-3 border-warning" style="height: fit-content;">
+            <table class="table table-dark table-striped m-0">
+               <tbody>
+                  <tr>
+                     <td class="text-start" id="count-numbers-txt">Count Numbers</td>
+                     <td class="text-end" id="count-numbers-num">-</td>
+                  </tr>
+                  <tr>
+                     <td class="text-start" id="count-paragraphs-txt">Count Paragraphs</td>
+                     <td class="text-end" id="count-paragraphs-num">-</td>
+                  </tr>
+                  <tr>
+                     <td class="text-start text-secondary" id="count-sentences-txt">Count Sentences
+                        <small>(soon)</small></td>
+                     <td class="text-end" id="count-sentences-num">-</td>
                   </tr>
                   <tr>
                      <td class="text-start" id="count-words-txt">Count Words</td>
-                     <td class="text-end" id="count-words-num">0</td>
+                     <td class="text-end" id="count-words-num">-</td>
                   </tr>
                   <tr class="">
                      <td class="text-start text-secondary">The Most Words <small>(soon)</small></td>
@@ -62,57 +97,25 @@
                      <div class="col-6">
                         <span>&#9635;</span>
                         <span>example1</span>
-                        <span>(0)</span>
+                        <span>(-)</span>
                      </div>
                      <div class="col-6">
                         <span>&#9635;</span>
                         <span>example1</span>
-                        <span>(0)</span>
+                        <span>(-)</span>
                      </div>
                      <div class="col-6">
                         <span>&#9635;</span>
                         <span>example1</span>
-                        <span>(0)</span>
+                        <span>(-)</span>
                      </div>
                      <div class="col-6">
                         <span>&#9635;</span>
                         <span>example1</span>
-                        <span>(0)</span>
+                        <span>(-)</span>
                      </div>
                </ul>
             </div>
-         </div>
-         <!-- table 1 - end -->
-         <!-- table 2 - srart -->
-         <div class="col-5 m-1 my-4 p-0 rounded border border-3 border-warning" style="height: fit-content;">
-            <table class="table table-dark table-striped m-0">
-               <tbody>
-                  <tr>
-                     <td class="text-start" id="page-load-time-txt">Page Load Time <small class="text-secondary">(with your connection)</small>
-                     </td>
-                     <td class="text-end">
-                        <span id="page-load-time-num">0</span>
-                        <small class="text-secondary">s</small>
-                     </td>
-                  </tr>
-                  <tr>
-                     <td class="text-start" id="links-txt">Links</td>
-                     <td class="text-end" id="links-num">0</td>
-                  </tr>
-                  <tr>
-                     <td class="text-start" id="images-tag-txt">Images Tag</td>
-                     <td class="text-end" id="images-tag-num">0</td>
-                  </tr>
-                  <tr>
-                     <td class="text-start" id="videos-tag-txt">Videos Tag</td>
-                     <td class="text-end" id="videos-tag-num">0</td>
-                  </tr>
-                  <tr>
-                     <td class="text-start" id="audios-tag-txt">Audios Tag</td>
-                     <td class="text-end" id="audios-tag-num">0</td>
-                  </tr>
-               </tbody>
-            </table>
          </div>
          <!-- table 2 - end -->
       </div>
@@ -120,7 +123,7 @@
    <!-- tables - end -->
 
    <!-- footer - start -->
-   <footer class="container-fluid bg-dark text-light">
+   <footer class="container-fluid bg-dark text-light position-fixed bottom-0 start-0">
       <div class="row text-center">
          <div class="col-4">
             <a class="text-light" href="https://github.com/mohsen-bahrami-mb" target="_blank">
@@ -142,8 +145,9 @@
    <!-- footer - end -->
 
    <!-- scripts - start -->
-   <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../bootstrap/dist/js/bootstrap.bundle.min.js"></script>
    <script src="./popup.js"></script>
+
    <!-- scripts - end -->
 </body>
 

@@ -1,21 +1,23 @@
 {
    "manifest_version": 3,
-   "name": "Hello Extensions",
-   "description": "Base Level Extension",
+   "name": "SEO Analyst",
+   "description": "A tool to check your competitors and improve your website's SEO",
    "version": "1.0",
    "action": {
       "default_popup": "popup/popup.html"
    },
+   "permissions": [
+      "activeTab",
+      "scripting",
+      "nativeMessaging"
+    ],
    "content_scripts": [
       {
          "js": [
-            "scripts/content_scripts.js"
+            "scripts/content-script.js"
          ],
          "matches": [
-            "https://*.ir/*",
-            "https://*.com/*",
-            "http://*.ir/*",
-            "http://*.com/*"
+            "https://*/*"
          ]
       }
    ]
